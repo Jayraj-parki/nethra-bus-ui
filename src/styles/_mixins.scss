@@ -1,0 +1,17 @@
+// _mixins.scss
+@import './var';
+@mixin button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  &:hover {
+    opacity: 0.85;
+    background-color: darken($bg-color, 5%);
+  }
+}
