@@ -1,0 +1,60 @@
+@import '../../styles/var';
+
+.features_row {
+  display: flex;
+  flex-direction: row;
+  gap: 2.2rem;
+  justify-content: center;
+  margin: 2rem 0 1.4rem 0;
+}
+
+.card {
+  background: $secondary-color;
+  border-radius: 1.25rem;
+//   box-shadow: 0 2px 18px rgba(120, 90, 180, 0.07);
+  display: flex;
+  align-items: center;
+  min-width: 280px;
+  padding: 1rem 1.5rem;
+  border: 1px solid $secondary-color-grey;
+  gap: 1.1rem;
+  transition: box-shadow 0.16s;
+  
+  &:hover {
+    box-shadow: 0 6px 24px rgba(75, 0, 130, 0.11);
+  }
+}
+
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 0.8rem;
+  background-color: $primary-color-soft; 
+  padding: 0.5rem;
+  color: $primary-color; 
+  font-size: 34px; 
+  line-height: 1;
+}
+
+
+
+.icon {
+  background-color: $primary-blue-soft; 
+  color: $primary-color;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.13rem;
+  margin-bottom: 0.2rem;
+  color: $text-color-solid;
+}
+
+.desc {
+  font-size: 1.01rem;
+  color: $text-color-soft;
+  opacity: 0.88;
+}

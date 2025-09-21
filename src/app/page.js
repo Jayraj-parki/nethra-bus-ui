@@ -1,13 +1,18 @@
-import styles from "./page.module.css";
+import FeaturesRow from "@/components/bus_features/FeaturesRow";
+import HeroBanner from "@/components/hero_banner/HeroBanner";
+import Navbar from "@/components/navbar/Navbar";
+import SearchBusForm from "@/components/search_bus_form/SearchBusForm";
 
-export default function Home() {
+
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-       Hello World!
+    <>
+      <main className="container row mx-auto col-10 mt-5">
+        <HeroBanner/>
+        <SearchBusForm/>
+        <FeaturesRow/>
       </main>
-      <footer className={styles.footer}>
-      </footer>
-    </div>
+    </>
   );
 }

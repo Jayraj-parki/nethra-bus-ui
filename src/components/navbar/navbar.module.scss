@@ -1,0 +1,38 @@
+// navbar.scss
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+.navbar {
+  background-color: $navbar-bg;
+  padding: 0.75rem 1rem;
+
+  .navbar_brand {
+    font-weight: bold;
+    color: $navbar-text;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+  .navbar_links{
+    
+    .links{
+      color: $font-color;
+      font-weight: 500;
+    }
+    .active_links{
+      @include button-style($navbar-btn-bg, $navbar-btn-text);
+      font-weight: 500;
+    }
+    
+  }
+  .navbar_user_actions{
+    .logout_btn{
+      @include button-style($secondary-color, $font-color);
+    } 
+  }
+
+}
