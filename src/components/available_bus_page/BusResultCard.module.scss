@@ -1,0 +1,79 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+
+.bus-img {
+  width: 100%;
+  // min-width: 180px;
+  // height: 160px;
+  object-fit: cover;
+  border-radius: $card-radius 0 0 $card-radius;
+  background: $gray-light;
+  @media screen and (min-width: 768px) {
+    // max-width: 220px;
+    min-width: 180px;
+    max-height: 360px;
+    object-fit: cover;
+  }
+  @media screen and (min-width: 992px) {
+    max-width: 220px;
+    min-width: 180px;
+    height: 160px;
+  }
+}
+
+.bus_meta {
+  font-size: $font-xl;
+  
+}
+
+.chip {
+  @include rating-chip;
+  margin-left: 0.7em;
+}
+
+
+
+.striked {
+  text-decoration: line-through;
+  color: #909;
+  font-size: 1.05em;
+  margin-right: 0.5em;
+}
+.discount {
+  @include mini-badge($danger-color);
+  margin-left: 0.5em;
+}
+.price {
+  font-size: 2rem;
+  color: $primary-color;
+  font-weight: 700;
+  margin-right: 0.2em;
+  letter-spacing: 0.01em;
+}
+.per-person {
+  color: $gray-dark;
+  opacity: 0.8;
+  font-size: 1em;
+}
+.perPerson {
+  color: $success-color;
+  font-weight: 500;
+  font-size: $font-md;
+}
+.seats {
+  font-weight: 500;
+  font-size: $font-md;
+  text-align: end
+}
+
+.select-btn {
+  @include button-style($primary-color, $secondary-color);
+  text-align: center;
+}
+
+.bus_feature_pill {
+  display: inline-block;
+  font-weight: 500;
+  font-size: $font-sm;
+}

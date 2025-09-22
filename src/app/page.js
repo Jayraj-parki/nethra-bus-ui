@@ -1,14 +1,13 @@
-import FeaturesRow from "@/components/bus_features/FeaturesRow";
-import HeroBanner from "@/components/hero_banner/HeroBanner";
-import Navbar from "@/components/navbar/Navbar";
-import SearchBusForm from "@/components/search_bus_form/SearchBusForm";
+import FeaturesRow from "@/components/landing_page/FeaturesRow";
+import HeroBanner from "@/components/landing_page/HeroBanner";
+import SearchBusForm from "@/components/landing_page/SearchBusForm";
 
 
 
 export default function HomePage() {
   return (
     <>
-      <main className="container row mx-auto col-10 mt-5">
+      <main className="container rows mx-auto col-12 col-lg-10 mt-lg-4 mt-2">
         <HeroBanner/>
         <SearchBusForm/>
         <FeaturesRow/>
