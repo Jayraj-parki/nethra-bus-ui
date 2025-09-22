@@ -69,7 +69,7 @@ export default function SearchBusForm() {
                     </div>
 
                     {/* Swap Button */}
-                    <div className="col-md-2 d-flex justify-content-center mx-auto">
+                    <div className="col d-flex justify-content-center mx-auto">
                         <button
                             type="button"
                             className={style.swap_btn}

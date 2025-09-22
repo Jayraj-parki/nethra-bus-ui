@@ -55,7 +55,7 @@ const CustomSelect = ({ options, value, onChange, placeholder, isSearchable = fa
 
   return (
     <Select
-    
+      instanceId="departure-select"
       options={options}
       value={options.find((opt) => opt.value === value) || null}
       onChange={(option) => onChange(option ? option.value : "")}

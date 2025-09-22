@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from '@/components/navbar/Navbar';
+import Navbar from '@/components/common/Navbar';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
