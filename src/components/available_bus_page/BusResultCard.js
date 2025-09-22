@@ -94,7 +94,7 @@ export default function BusResultCard({ bus }) {
                 </small>
               ))}
             </div>
-            <span className={`${style.chip} fs-6 d-md-none d-lg-block d-xl-none `}>
+            <span className={`${style.chip} fs-6 d-none d-lg-block d-xl-none `}>
                 <i className="bi bi-star-fill me-1"></i> {bus.rating}
               </span>
 
