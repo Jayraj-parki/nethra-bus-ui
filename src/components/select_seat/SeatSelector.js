@@ -106,15 +106,15 @@ export default function SeatSelector() {
                             ))}
                         </div>
                         {/* Legend */}
-                        <div className={style.legend +  " d-flex justify-content-center mt-4 align-items-center"}>
-                            <div className="legendItem d-flex justify-content-center mt-4 align-items-center">
-                                <span className={style.seatLegend + " border shadow-sm  " + style.availableLegend}></span><span className="mx-1">Available</span>
+                        <div className={style.legend +  " rows mx-auto d-flex justify-content-center mt-4 align-items-center flex-wrap"}>
+                            <div className="legendItem col-12 col-sm-auto   d-flex justify-content-center mt-sm-4 align-items-center">
+                                <span className={style.seatLegend + " border shadow-sm  " + style.availableLegend}></span><span className="mx-3 mx-sm-1">Available</span>
                             </div>
-                            <div className="legendItem  d-flex justify-content-center mt-4 align-items-center">
-                                <span className={style.seatLegend + " " + style.selectedLegend}></span><span className="mx-1">Selected</span>
+                            <div className="legendItem  col-12 col-sm-auto  d-flex justify-content-center  mt-sm-4 align-items-center">
+                                <span className={style.seatLegend + " " + style.selectedLegend}></span><span className="mx-3 mx-sm-1">Selected</span>
                             </div>
-                            <div className="legendItem  d-flex justify-content-center mt-4 align-items-center">
-                                <span className={style.seatLegend + " " + style.occupiedLegend}></span><span className="mx-1">Occupied</span>
+                            <div className="legendItem col-12 col-sm-auto  d-flex justify-content-center mt-sm-4 align-items-center">
+                                <span className={style.seatLegend + " " + style.occupiedLegend}></span><span className="mx-3 mx-sm-1">Occupied</span>
                             </div>
                         </div>
                     </div>
