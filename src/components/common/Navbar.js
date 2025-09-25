@@ -15,7 +15,7 @@ export default function Navbar() {
           <i className="bi bi-bus-front"></i> BusBook
         </Link>
         <button onClick={() => setCollapse(prev => (!prev))} className={`navbar-toggler shadow-none border-0  outline-none ${collapse && "collapsed"}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded={`${collapse} && "false"`} aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className={`col-auto flex-wrap collapse navbar-collapse ${!collapse && "show"} ms-lg-2`} id="navbarSupportedContent">
           {/* Links */}
