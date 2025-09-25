@@ -36,7 +36,7 @@ const Login = () => {
           <button type="button" className={classes.guestBtn + ' border outline-0 shadow-none fw-medium m-0'}>Continue as Guest</button>
 
           <p className={classes.registerText}>
-            Don’t have an account? <Link href="/register">Register here</Link>
+            Don’t have an account? <Link href="/signup">Register here</Link>
           </p>
         </form>
       </div>

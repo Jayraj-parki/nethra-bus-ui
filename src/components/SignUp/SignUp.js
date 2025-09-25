@@ -1,9 +1,9 @@
 'use client';
-import classes from './Register.module.scss';
+import classes from './SignUp.module.scss';
 import Link from "next/link";
 import React, { useState } from 'react';
 
-const Registers = () => {
+const SignUp = () => {
   const [idproof, setIdproof] = useState("");
 
   return (
@@ -63,4 +63,4 @@ const Registers = () => {
   );
 };
 
-export default Registers;
+export default SignUp;
