@@ -1,8 +1,8 @@
 'use client';
 import Link from "next/link";
-import classes from './Login.module.scss';
+import classes from './SignIn.module.scss';
 
-const Login = () => {
+const SignIn = () => {
   return (
     <div className={classes.w + ' m-0'}>
       <div className={classes.w1 +' d-none d-md-flex flex-column justify-content-center'}>
@@ -36,7 +36,7 @@ const Login = () => {
           <button type="button" className={classes.guestBtn + ' border outline-0 shadow-none fw-medium m-0'}>Continue as Guest</button>
 
           <p className={classes.registerText}>
-            Don’t have an account? <Link href="/register">Register here</Link>
+            Don’t have an account? <Link href="/signup">Register here</Link>
           </p>
         </form>
       </div>
@@ -44,4 +44,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignIn;
