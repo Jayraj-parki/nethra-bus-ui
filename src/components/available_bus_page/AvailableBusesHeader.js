@@ -4,7 +4,7 @@ import style from './AvailableBusesHeader.module.scss';
 
 export default function AvailableBusesHeader({ from, to, date, passengers, resultsCount, onBack }) {
   return (
-    <div className="row align-items-center mb-lg-4 p-1">
+    <div className="row align-items-center  p-1">
       <div className="col-auto">
         <button 
           className={`btn btn-outline-0 shadow-0 border ${style.backBtn}`} 

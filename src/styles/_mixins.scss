@@ -38,3 +38,36 @@
   padding: 0.12em 0.5em;
   border-radius: 0.7em;
 }
+
+@mixin card {
+  background: $secondary-color;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  border: 1px solid $border_color;
+}
+
+@mixin btn-primary { 
+  background: $primary-color;
+  color: $secondary-color;
+  border-radius: $radius-md;
+  font-weight: 600;
+  padding: 0.7em 2.2em;
+  border: none;
+  transition: background 0.16s;
+  &:hover {
+    background: darken($primary-color, 8%);
+  }
+}
+
+@mixin btn-primary-disabled { 
+  background: $gray-dark;
+  color: $gray-light;
+  border-radius: $radius-md;
+  font-weight: 600;
+  padding: 0.7em 2.2em;
+  border: none;
+  transition: background 0.16s;
+  &:hover {
+    background: $gray-dark;
+  }
+}
