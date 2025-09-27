@@ -1,5 +1,7 @@
 import Image from "next/image";
 import style from "./BusResultCard.module.scss";
+import Link from "next/link";
+import { urls } from "@/utils/constants";
 
 
 export default function BusResultCard({ bus }) {
@@ -98,7 +100,7 @@ export default function BusResultCard({ bus }) {
                 <i className="bi bi-star-fill me-1"></i> {bus.rating}
               </span>
 
-            <button className={`col-12 col-lg-3 ms-auto btn ${style["select-btn"]} d-block outline-0 shadow-0 text-center`}>Select Seats</button>
+            <Link href={`${urls.select_seats}`} className={`col-12 col-lg-3 ms-auto btn ${style["select-btn"]} d-block outline-0 shadow-0 text-center`}>Select Seats</Link>
           </div>
 
         </div>

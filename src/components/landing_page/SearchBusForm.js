@@ -3,6 +3,8 @@ import style from "./searchBusForm.module.scss";
 import { useState, useRef } from "react";
 import CustomSelect from "../common/CustomSelect";
 import CustomDatePicker from "../common/CustomDatePicker";
+import Link from "next/link";
+import { urls } from "@/utils/constants";
 export default function SearchBusForm() {
     const [fromCity, setFromCity] = useState("");
     const [toCity, setToCity] = useState("");
@@ -111,9 +113,9 @@ export default function SearchBusForm() {
                 {/* Search Button */}
                 <div className="row mt-4">
                     <div className="col-12">
-                        <button type="submit" className={style.search_btn}>
+                        <Link href={urls?.available_bus} type="submit" className={style.search_btn}>
                             <i className="bi bi-search"></i> Search Buses
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </form>

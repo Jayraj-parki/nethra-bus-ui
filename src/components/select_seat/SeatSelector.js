@@ -1,6 +1,8 @@
 "use client";
+import { urls } from "@/utils/constants";
+import Header from "../common/Header";
 import style from "./SeatSelector.module.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const seatLayout = [
     ["A1", "A2", "", "A3", "A4"],
@@ -29,7 +31,7 @@ const demoTrip = {
 
 export default function SeatSelector() {
     const [selectedSeats, setSelectedSeats] = useState([]);
-
+    const [headerData,setHeader]=useState({})
     const passengers = demoTrip.passengers;
     const requiredSeats = passengers - selectedSeats.length;
 
@@ -41,26 +43,16 @@ export default function SeatSelector() {
             setSelectedSeats([...selectedSeats, seat]);
         }
     }
+    useEffect(()=>{
+        setHeader({
+            prevPage: `${urls.available_bus}`, pageHeader:'Select Your Seats', pageDescription:`Choose ${passengers} seats for your journey`, pageResult:'', pageType :''
+        })
+    },[])
 
     return (
         <div className="container">
-            <div className="row align-items-center mb-lg-4 p-1">
-                <div className="col-auto">
-                    <button
-                        className={`btn btn-outline-0 shadow-0 border ${style.backBtn}`}
-                        onClick={() => window.history.back()}>
-                        <i className="bi bi-arrow-left me-2"></i>
-                        Back to Search
-                    </button>
-                </div>
-                <div className="mt-3 m-lg-0 col-auto">
-                    <h4 className={style.pageTitle}>Select Your Seats</h4>
-                    <div className={`${style.pageSubtitle} mt-2 m-lg-0`}>
-                        Choose {passengers} seats for your journey
-                    </div>
-                </div>
-
-            </div>
+           
+            <Header  {...headerData}/>
             <div className="row align-items-start">
                 <div className="col-lg-7 ">
                     <div className={style.card + ' border shadow-none '}>

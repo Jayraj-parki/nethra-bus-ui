@@ -3,6 +3,7 @@ import Link from "next/link";
 import classes from './SignIn.module.scss';
 
 const SignIn = () => {
+  
   return (
     <div className={classes.w + ' m-0'}>
       <div className={classes.w1 +' d-none d-md-flex flex-column justify-content-center'}>

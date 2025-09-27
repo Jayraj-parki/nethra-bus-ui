@@ -3,15 +3,22 @@ import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import style from "./navbar.module.scss"; // import your SCSS
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { urls } from "@/utils/constants";
+import { usePathname } from "next/navigation";
+import { getPathByLevel } from "@/utils/navigation_path";
 export default function Navbar() {
-  const [activeLink, setActiveLink] = useState("/")
-   const [collapse, setCollapse] = useState(true)
+  const [activeLink, setActiveLink] = useState("/landing_page")
+  const [collapse, setCollapse] = useState(true)
+  const url = usePathname()
+  useEffect(() => {
+    setActiveLink(getPathByLevel(url, 1))
+  }, [url])
   return (
     <nav className={`${style.navbar} navbar navbar-expand-lg navbar-custom border-bottom`}>
       <div className="container-fluid  col-md-10">
         {/* Brand */}
-        <Link className={`${style.navbar_brand} navbar-brand`} href="#">
+        <Link className={`${style.navbar_brand} navbar-brand`} href={`${urls.landing_page}`} onClick={() => setActiveLink(urls.landing_page)}>
           <i className="bi bi-bus-front"></i> BusBook
         </Link>
         <button onClick={() => setCollapse(prev => (!prev))} className={`navbar-toggler shadow-none border-0  outline-none ${collapse && "collapsed"}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded={`${collapse} && "false"`} aria-label="Toggle navigation">
@@ -20,10 +27,10 @@ export default function Navbar() {
         <div className={`col-auto flex-wrap collapse navbar-collapse ${!collapse && "show"} ms-lg-2`} id="navbarSupportedContent">
           {/* Links */}
           <div className={`${style.navbar_links} row  mx-auto d-flex align-items-center gap-2 gap-lg-3`} >
-            <Link href="#" onClick={() => setActiveLink("/")} className={`${style.link} ${activeLink == "/" && style.active_links} nav-link col-10 col-lg-auto mx-auto mx-lg-0 my-0`}>
+            <Link href={`${urls.landing_page}`} onClick={() => setActiveLink(urls.landing_page)} className={`${style.link} ${activeLink == urls.landing_page && style.active_links} nav-link col-10 col-lg-auto mx-auto mx-lg-0 my-0 border p-2 rounded-3`}>
               <i className="bi bi-house-door"></i> Dashboard
             </Link>
-            <Link href="#" onClick={() => setActiveLink("booking_history")} className={`${style.link} ${activeLink == "booking_history" && style.active_links }  col-10 border p-2 rounded-3 col-lg-auto nav-link mx-auto mx-lg-0 my-0`}>
+            <Link href={`${urls.booking_history}`} onClick={() => setActiveLink(urls.booking_history)} className={`${style.link} ${activeLink == urls.booking_history && style.active_links}  col-10 border p-2 rounded-3 col-lg-auto nav-link mx-auto mx-lg-0 my-0`}>
               <i className="bi bi-clock-history"></i> Booking History
             </Link>
           </div>
