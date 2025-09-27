@@ -1,4 +1,5 @@
 'use client';
+import { urls } from '@/utils/constants';
 import classes from './SignUp.module.scss';
 import Link from "next/link";
 import React, { useState } from 'react';
@@ -55,7 +56,7 @@ const SignUp = () => {
           <button type="submit" className={classes.loginBtn +  ' fw-medium'}>Create Account</button>
 
           <p className={classes.registerText}>
-            Already have an account? <Link href="/signin">Sign in here</Link>
+            Already have an account? <Link href={urls?.signin}>Sign in here</Link>
           </p>
         </form>
       </div>

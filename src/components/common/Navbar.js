@@ -38,9 +38,9 @@ export default function Navbar() {
           {/* Right side */}
           <div className={`${style.navbar_user_actions} row mx-auto  d-flex align-items-center gap-1 gap-lg-3  ms-lg-auto`}>
             <span className={`${style.navbar_user_actions} text-muted mt-2  py-2 py-lg-0 text-center col-10 col-lg-auto mx-auto mx-lg-0`}>Welcome, John Doe</span>
-            <button className={`${style.logout_btn} btn  border logout-btn col-10 col-lg-auto mx-auto mx-lg-0`} >
+            <Link href={urls.signup} className={`${style.logout_btn} btn  border logout-btn col-10 col-lg-auto mx-auto mx-lg-0`} >
               <i className="bi bi-box-arrow-right"></i> Logout
-            </button>
+            </Link>
           </div>
         </div>
       </div>
