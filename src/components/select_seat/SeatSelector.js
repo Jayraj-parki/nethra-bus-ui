@@ -3,6 +3,7 @@ import { urls } from "@/utils/constants";
 import Header from "../common/Header";
 import style from "./SeatSelector.module.scss";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const seatLayout = [
     ["A1", "A2", "", "A3", "A4"],
@@ -134,9 +135,9 @@ export default function SeatSelector() {
                         <div className="d-flex justify-content-between align-content-between pt-1 text-danger"><span className="text-muted fs-6 fw-medium me-auto">% Discount ({demoTrip.discount}%):</span> -₹{selectedSeats.length ? Math.round((demoTrip.price * demoTrip.discount / 100) * selectedSeats.length) : "0"}</div>
                         <hr />
                         <div className="fw-medium me-auto "><span className="fw-medium me-auto">Total Amount:</span> ₹{selectedSeats.length ? (demoTrip.price - Math.round(demoTrip.price * demoTrip.discount / 100)) * selectedSeats.length : "0"}</div>
-                        <button className={`${style.bookBtn} fs-6 ${ requiredSeats > 0 ? style.btn_disabled : ''}`} disabled={requiredSeats > 0}>
+                        <Link href={urls?.booking_confirmed} className={`${style.bookBtn} d-block fs-6 ${ requiredSeats > 0 ? style.btn_disabled : ''}`} disabled={requiredSeats > 0}>
                             Book Now – ₹{selectedSeats.length ? (demoTrip.price - Math.round(demoTrip.price * demoTrip.discount / 100)) * selectedSeats.length : "0"}
-                        </button>
+                        </Link>
                         {requiredSeats > 0 &&
                             <div className="text-danger text-center small">
                                 Please select {requiredSeats} more seat{requiredSeats > 1 ? "s" : ""}
