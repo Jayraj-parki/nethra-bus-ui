@@ -1,7 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import style from "./LiveBusTrackModal.module.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import Image from "next/image";
 
 export default function LiveBusTrackModal({ open, onClose, track }) {
@@ -20,7 +18,7 @@ export default function LiveBusTrackModal({ open, onClose, track }) {
 
   return (
     <div className={style.busTrackOverlay + '  rows mx-auto d-flex justify-content-center align-items-center'}>
-      <div className={style.busTrackDialog + ' bg-white rounded-4 shadow-lg col-4 p-3'} ref={modalRef}>
+      <div className={style.busTrackDialog + ' bg-white rounded-4 shadow-lg col-11 col-sm-12 p-3 p-3'} ref={modalRef}>
         <button className={style.closeBtn + ' btn btn-light btn-sm border-0  '} onClick={onClose}>
           <i className="bi bi-x-lg"></i>
         </button>
@@ -36,13 +34,13 @@ export default function LiveBusTrackModal({ open, onClose, track }) {
             </div>
           </div>
         </div>
-        <div className={style.statusGrid + ' rows mx-auto d-flex gap-2 mt-1 p-2 '}>
-          <div className={style.statusCard + ' col-6 bg-light rounded-3 p-3'}>
+        <div className={style.statusGrid + ' rows mx-auto d-flex  gap-1 mt-1 p-2 justify-content-around  flex-wrap'}>
+          <div className={style.statusCard + ' col-12 col-sm-6 bg-light rounded-3 p-3'}>
             <div className={style.statusLabel + " text-success mb-2" }>Current Status</div>
-            <div className="">{track.current}</div>
+            <div className="">{track.current}  </div>
             <div className="text-muted">Last updated: {track.updated}</div>
           </div>
-          <div className={style.statusCard +' col-6 bg-light rounded-3 p-3'}>
+          <div className={style.statusCard +' col-12 col-sm-5 mt-2 mt-sm-0 bg-light rounded-3 p-3'}>
             <div className={style.statusLabel + " text-primary mb-2"}>Next Stop</div>
             <div >{track.next}</div>
             <div className="text-muted">Expected arrival in {track.arrivalIn}</div>
