@@ -1,4 +1,4 @@
-import SeatSelector from "@/components/select_seat/SeatSelector";
+import SeatSelector from "@/components/select_seat_page/SeatSelector";
 
 
 export default function AvailableBusPage() {
