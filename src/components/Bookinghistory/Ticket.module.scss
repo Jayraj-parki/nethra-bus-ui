@@ -1,0 +1,37 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+.bg-purple {
+  background-color: #6f42c1 !important;
+  color: #fff;
+}
+.card {
+  border-radius: 12px;
+}
+.w{
+    width: 92%;
+    font-weight: $font-sm;
+}
+.w i{
+    color: #6c757d;
+}
+.cb{
+    width: 18%;
+    font-size: $font-sm;
+
+}
+@media screen and (min-width:0px) and (max-width:769px) {
+    .cb{
+        width: 27%;
+    }
+}
+@media screen and (min-width:0px) and (max-width:500px) {
+
+.cb{
+    width: 56%;
+}
+.f{
+    font-size: $font-md;
+    margin-top: 6px;
+}
+
+}

@@ -1,0 +1,61 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+.tab{
+    width: 91%;
+;
+    padding: 3px;
+    border-radius: 15px;
+    justify-content: space-between;
+    color: #6c757d;
+    background-color: #f8f9fa;
+}
+.b1{
+    // background-color: $primary-color;
+    width: 50%;
+    // background-color: white;
+    border-radius: 10px;
+    // pointer-events: none;
+    border: none;
+    font-weight: 500;
+    font-size: $font-md;
+}
+
+.active {
+  background-color: #ffffff; 
+}
+
+.inactive {
+  background-color: transparent; 
+}
+.card {
+  border-radius: 12px;
+}
+.w{
+    width: 92%;
+    font-weight: $font-sm;
+}
+.w i{
+    color: #6c757d;
+}
+.cb{
+    width: 18%;
+    font-size: $font-sm;
+
+}
+
+@media screen and (min-width:0px) and (max-width:769px) {
+.top{
+  width: 100%;
+}
+  
+}
+@media screen and (min-width:0px) and (max-width:500px) {
+
+
+.f{
+    font-size: $font-md;
+    margin-top: 6px;
+}
+
+}
