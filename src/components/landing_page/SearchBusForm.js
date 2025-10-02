@@ -1,28 +1,33 @@
 "use client";
 import style from "./searchBusForm.module.scss";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import CustomSelect from "../common/CustomSelect";
 import CustomDatePicker from "../common/CustomDatePicker";
 import Link from "next/link";
 import { urls } from "@/utils/constants";
+import { useAvailableCities } from "@/hooks/useAvailableCities";
 export default function SearchBusForm() {
+    const { sources, destinations, loading, error } = useAvailableCities();
     const [fromCity, setFromCity] = useState("");
     const [toCity, setToCity] = useState("");
     const [passengers, setPassengers] = useState(1);
     const today = new Date().toISOString().split("T")[0]; // "yyyy-mm-dd"
     const [date, setDate] = useState(today);
 
+    // const cityOptions = [
+    //     { value: "Mumbai", label: "Mumbai" },
+    //     { value: "Delhi", label: "Delhi" },
+    //     { value: "Bangalore", label: "Bangalore" },
+    //     { value: "Chennai", label: "Chennai" },
+    //     { value: "Kolkata", label: "Kolkata" },
+    // ];
+    const onSelect = (type, val) => {
+    if (type === "from") setFromCityet(val);
+    else setToCity(val);
+    onChange?.({ from: type === "from" ? val : from, to: type === "to" ? val : to });
+  };
 
-    const dateInputRef = useRef(null);
-    const cityOptions = [
-        { value: "Mumbai", label: "Mumbai" },
-        { value: "Delhi", label: "Delhi" },
-        { value: "Bangalore", label: "Bangalore" },
-        { value: "Chennai", label: "Chennai" },
-        { value: "Kolkata", label: "Kolkata" },
-    ];
-
-    const passengerOptions = Array.from({ length: 10 }, (_, i) => ({
+    const passengerOptions = Array.from({ length: 6 }, (_, i) => ({
         value: i + 1,
         label: `${i + 1} Passenger${i > 0 ? "s" : ""}`,
     }));
@@ -40,6 +45,7 @@ export default function SearchBusForm() {
             <p className={style.subtext}>
                 Enter your travel details to find available buses
             </p>
+            {error && <p className="text-danger small mt-1">Failed to load cities: {error}</p>}
             <form className={style.form_section}>
                 <div className="row g-3 align-items-end">
                     {/* From */}
@@ -48,11 +54,12 @@ export default function SearchBusForm() {
                             <i className="bi bi-geo-alt"></i> From
                         </label>
                         <CustomSelect
-                            options={cityOptions}
+                            options={sources}
                             value={fromCity}
-                            onChange={setFromCity}
-                            placeholder="Select departure city"
+                            onChange={(value)=>onSelect("from", value)}
+                            placeholder={loading ? "Loading..." : "Select Departure city"}
                             isSearchable
+                            isDisabled={loading || !!error}
                         />
                     </div>
 
@@ -62,11 +69,12 @@ export default function SearchBusForm() {
                             <i className="bi bi-geo-alt"></i> To
                         </label>
                         <CustomSelect
-                            options={cityOptions}
+                            options={destinations}
                             value={toCity}
-                            onChange={setToCity}
-                            placeholder="Select departure city"
+                            onChange={(value)=>onSelect("to", value)}
+                            placeholder={loading ? "Loading..." : "Select Arrival city"}
                             isSearchable
+                            isDisabled={loading || !!error}
                         />
                     </div>
 

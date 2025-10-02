@@ -3,7 +3,7 @@
 import Select from "react-select";
 import PropTypes from "prop-types";
 
-const CustomSelect = ({ options, value, onChange, placeholder, isSearchable = false }) => {
+const CustomSelect = ({ options, value, onChange, placeholder, isSearchable = false, isDisabled = false }) => {
   const customStyles = {
     control: (provided) => ({
       ...provided,
@@ -30,8 +30,8 @@ const CustomSelect = ({ options, value, onChange, placeholder, isSearchable = fa
       backgroundColor: state.isSelected
         ? "#e42d7b"
         : state.isFocused
-        ? "rgba(228,45,123,0.1)"
-        : "#fff",
+          ? "rgba(228,45,123,0.1)"
+          : "#fff",
       color: state.isSelected ? "#fff" : "#222",
       fontWeight: state.isSelected ? 600 : 500,
       cursor: "pointer",
@@ -52,17 +52,22 @@ const CustomSelect = ({ options, value, onChange, placeholder, isSearchable = fa
       fontSize: "1.03rem",
     }),
   };
+  const formattedOptions = options.map((opt) =>
+    typeof opt === "string" ? { value: opt, label: opt } : opt
+  );
+
 
   return (
     <Select
       instanceId="departure-select"
-      options={options}
-      value={options.find((opt) => opt.value === value) || null}
+      options={formattedOptions}
+      value={formattedOptions.find((opt) => opt.value === value) || null}
       onChange={(option) => onChange(option ? option.value : "")}
       placeholder={placeholder}
       styles={customStyles}
       classNamePrefix="customSelect"
       isSearchable={isSearchable}
+      isDisabled={isDisabled}
     />
   );
 };
