@@ -1,6 +1,5 @@
-// src/store/lookupSlice.js
+import { busApi } from "@/services/busApi";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { busApi } from "../services/busApi";
 
 // Optional: cache TTL to avoid refetching too often
 const TTL_MS = 5 * 60 * 1000; // 5 minutes

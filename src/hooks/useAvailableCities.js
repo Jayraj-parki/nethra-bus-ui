@@ -7,7 +7,7 @@ import {
   selectCityDestinations,
   selectCitiesLoading,
   selectCitiesError,
-} from "../store/lookupSlice";
+} from "@/store/lookupSlice"; 
 import { useEffect } from "react";
 
 export function useAvailableCities() {

@@ -1,9 +1,9 @@
-// src/hooks/useRegisterRedirect.js
+
 "use client";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useRouter, useSearchParams } from "next/navigation";
-import { registerUser, selectAuth } from "../store/authSlice";
+import { useRouter } from "next/navigation";
+import { registerUser } from "@/store/authSlice";
 
 export function useRegisterRedirect() {
   const dispatch = useDispatch();

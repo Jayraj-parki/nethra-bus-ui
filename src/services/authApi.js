@@ -1,6 +1,5 @@
 import { apiFetch } from "./https";
 
-
 // Adjust paths to your backend
 export const authApi = {
   register: (payload) => apiFetch("/auth/register", { method: "POST", body: payload }),

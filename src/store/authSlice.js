@@ -1,4 +1,4 @@
-// src/store/authSlice.js
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { authApi } from "@/services/authApi";
 import { setTokenProvider } from "@/services/https";

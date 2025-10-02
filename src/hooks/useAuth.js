@@ -7,7 +7,7 @@ import {
   continueAsGuest,
   signOut,
   loginWithCredentials
-} from "../store/authSlice";
+} from "@/store/authSlice";
 
 export const useAuth = () => {
   const auth = useSelector(selectAuth);

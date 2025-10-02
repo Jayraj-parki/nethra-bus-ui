@@ -6,7 +6,8 @@ export const makeStore = () => {
   const store = configureStore({
     reducer: {
       auth: authReducer,
-      lookup: lookupReducer
+      lookup: lookupReducer,
+      search: searchReducer,
     },
     middleware: (getDefault) => getDefault({ serializableCheck: false })
   });
