@@ -3,7 +3,7 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
-import { registerUser } from "@/store/authSlice";
+import { registerUser, selectAuth } from "@/store/authSlice";
 
 export function useRegisterRedirect() {
   const dispatch = useDispatch();
